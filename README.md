@@ -59,16 +59,20 @@ I receive a confirmation message when the refill is detected.
     <img src="https://github.com/user-attachments/assets/a1c14748-8bd7-4168-9f74-5edce146eb19">
 </p>
 
-## Database Design
+## Data Design
+
+# Data Collection
+
+A sensor node will send out 3 information: The sensor ID, which corresponds to which cubicle the sensor is installed at; The sensor value/distance, will corresponds to the remaining toilet paper; Lastly is the time stamp used to collect and sent out the data periodically once every hour, from 6 am to 6 pm.
+
+<p align="center">
+    <img src="https://github.com/user-attachments/assets/1b0898e4-0c95-4998-af10-7bf51473d515">
+</p>
 
 **Measurement Equation**\
 Let $D$ be the total distance, $x_{max}$ be the maximum height of the toilet paper roll, and $x$ be the distance to the current paper roll.
 
 $$\text{Percentage Remaining} = 100 - \left[\frac{x - x_{max}}{D - x_{max}}\times100\right]$$
-
-<p align="center">
-    <img src="https://github.com/user-attachments/assets/1b0898e4-0c95-4998-af10-7bf51473d515">
-</p>
 
 ## Our Members
 Mr. Chananyu Kamolsuntron 
