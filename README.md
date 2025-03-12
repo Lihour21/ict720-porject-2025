@@ -1,12 +1,6 @@
-# ict720-porject-2025
-Rep for demo idea, and code fo ICT720 cource of 2025
-
-# Our Members
-Mr. Chananyu Kamolsuntron 
-
-Mr. Intouch Wangtrakoondee
-
-Mr. Lihour San
+# Papyrus Group
+## Overview
+This project aims to develop an Internet of Things system designed to monitor the remaining toilet paper in restrooms, ensuring both users and cleaning staff are always aware of stock levels. The toilet paper monitoring system will use a VL53L0X Time-of-Flight sensor to measure the distance between the top of the toilet paper roll and the top of the holder. As the toilet paper is used, the distance between the sensor and the roll will decrease, providing real-time information about how much paper is left. The data will then be sent to an M5Stack Atom, where it will calculate the remaining paper on the roll and sends the information via Wi-Fi to a local server.
 
 # User stories 
 1. **US1**: Device Setup & Connectivity
@@ -67,3 +61,14 @@ I receive a confirmation message when the refill is detected.
 
 ## Database Design
 
+**Measurement Equation**\
+Let $D$ be the total distance, $x_(max)$ be the maximum height of the toilet paper roll, and $x$ be the distance to the current paper roll.
+
+$$\text{Percentage Remaining} = 100 - \left[\frac{x - x_{max}}{D - x_{max}}\times100\right]$$
+
+# Our Members
+Mr. Chananyu Kamolsuntron 
+
+Mr. Intouch Wangtrakoondee
+
+Mr. Lihour San
