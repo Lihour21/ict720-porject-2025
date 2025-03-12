@@ -2,7 +2,7 @@
 ## Overview
 This project aims to develop an Internet of Things system designed to monitor the remaining toilet paper in restrooms, ensuring both users and cleaning staff are always aware of stock levels. The toilet paper monitoring system will use a VL53L0X Time-of-Flight sensor to measure the distance between the top of the toilet paper roll and the top of the holder. As the toilet paper is used, the distance between the sensor and the roll will decrease, providing real-time information about how much paper is left. The data will then be sent to an M5Stack Atom, where it will calculate the remaining paper on the roll and sends the information via Wi-Fi to a local server.
 
-# User stories 
+## User stories 
 1. **US1**: Device Setup & Connectivity
 As an owner, I want to register my toilet paper monitoring device with my home/business WiFi, so that I can receive data remotely.
 
@@ -66,7 +66,7 @@ Let $D$ be the total distance, $x_{max}$ be the maximum height of the toilet pap
 
 $$\text{Percentage Remaining} = 100 - \left[\frac{x - x_{max}}{D - x_{max}}\times100\right]$$
 
-# Our Members
+## Our Members
 Mr. Chananyu Kamolsuntron 
 
 Mr. Intouch Wangtrakoondee
