@@ -59,9 +59,9 @@ I receive a confirmation message when the refill is detected.
     <img src="https://github.com/user-attachments/assets/a1c14748-8bd7-4168-9f74-5edce146eb19">
 </p>
 
-## Data Design
+# Data Design
 
-# Data Collection
+### Data Collection
 
 A sensor node will send out 3 information: The sensor ID, which corresponds to which cubicle the sensor is installed at; The sensor value/distance, will corresponds to the remaining toilet paper; Lastly is the time stamp used to collect and sent out the data periodically once every hour, from 6 am to 6 pm.
 
