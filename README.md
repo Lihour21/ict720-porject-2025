@@ -65,3 +65,5 @@ I receive a confirmation message when the refill is detected.
     <img src="https://github.com/user-attachments/assets/a1c14748-8bd7-4168-9f74-5edce146eb19">
 </p>
 
+## Database Design
+
