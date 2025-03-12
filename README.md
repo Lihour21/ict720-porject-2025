@@ -62,7 +62,7 @@ I receive a confirmation message when the refill is detected.
 ## Database Design
 
 **Measurement Equation**\
-Let $D$ be the total distance, $x_(max)$ be the maximum height of the toilet paper roll, and $x$ be the distance to the current paper roll.
+Let $D$ be the total distance, $x_{max}$ be the maximum height of the toilet paper roll, and $x$ be the distance to the current paper roll.
 
 $$\text{Percentage Remaining} = 100 - \left[\frac{x - x_{max}}{D - x_{max}}\times100\right]$$
 
