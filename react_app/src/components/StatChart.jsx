@@ -39,7 +39,7 @@ const StatChart = () => {
                         <YAxis stroke='#9ca3af'/>
                         <Tooltip/>
 
-                        <Bar dataKey="value"  fill="#8884d8" background={{ fill: "#eee", opacity:cd 0 }} />
+                        <Bar dataKey="value"  fill="#8884d8" background={{ fill: "#eee", opacity: 0 }} />
                     </BarChart>
                 </ResponsiveContainer>
             </div>
