@@ -4,4 +4,4 @@ WORKDIR /python-docker
 COPY requirements.txt ./
 RUN pip install -r requirements.txt
 COPY . .
-CMD ["python", "-u", "mqtt_receiver.py"]
+CMD ["python", "-u", "mqtt_app.py"]

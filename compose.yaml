@@ -5,4 +5,25 @@ services:
       - .env
     ports:
       - 8000:8000
-      
+
+  mqtt_app:
+    build: .
+    container_name: mqtt_app
+    depends_on:
+      - mosquitto
+    networks:
+      - mqtt_network
+
+  mosquitto:
+    image: eclipse-mosquitto:latest
+    container_name: mosquitto
+    ports:
+      - "1883:1883"  # MQTT port
+    volumes:
+      - ./mosquitto/config/mosquitto.conf:/mosquitto/config/mosquitto.conf
+    networks:
+      - mqtt_network
+
+networks:
+  mqtt_network:
+    driver: bridge
