@@ -69,32 +69,43 @@ def on_message(mqtt_client, userdata, msg):
     print(data_send)
 
     # Here you can insert the data into MongoDB if required:
-    # try:
-    #     result = collection.insert_one(data_send)
-    #     print(f"Data inserted into MongoDB with ID: {result.inserted_id}")
-    # except PyMongoError as e:
-    #     print(f"Error inserting data into MongoDB: {e}")
+    try:
+        result = collection.insert_one(data_send)
+        print(f"Data inserted into MongoDB with ID: {result.inserted_id}")
+    except PyMongoError as e:
+        print(f"Error inserting data into MongoDB: {e}")
 
 # Function to publish a "call" message every 5 seconds
 def send_call(mqtt_client):
     last_sent_time = None  # Variable to keep track of the last time a message was sent
     
+    # while True:
+    #     # Get the current time
+    #     now = datetime.now()
+
+    #     # Check if the current minute is 00 and if we haven't already sent a message in this minute
+    #     if (now.minute % 20) == 0 and 6 <= now.hour < 18 and (last_sent_time is None or last_sent_time != now.minute):
+    #         # Construct the "call" message (it could be a simple string or JSON data)
+    #         call_message = json.dumps({"message": "call", "timestamp": now.isoformat()})
+    #         # Publish to the CALL_TOPIC
+    #         mqtt_client.publish(CALL_TOPIC, call_message)
+    #         print(f"Published 'call' to {CALL_TOPIC} at {now.isoformat()}")
+    #         # Update the last sent time to avoid sending more than once per minute
+    #         last_sent_time = now.minute
+
+    #     # You can use a small delay to prevent overloading the CPU
+    #     time.sleep(25)
+
     while True:
         # Get the current time
         now = datetime.now()
 
-        # Check if the current minute is 00 and if we haven't already sent a message in this minute
-        if (now.minute % 20) == 0 and 6 <= now.hour < 18 and (last_sent_time is None or last_sent_time != now.minute):
-            # Construct the "call" message (it could be a simple string or JSON data)
-            call_message = json.dumps({"message": "call", "timestamp": now.isoformat()})
-            # Publish to the CALL_TOPIC
-            mqtt_client.publish(CALL_TOPIC, call_message)
-            print(f"Published 'call' to {CALL_TOPIC} at {now.isoformat()}")
-            # Update the last sent time to avoid sending more than once per minute
-            last_sent_time = now.minute
+        call_message = json.dumps({"message": "call", "timestamp": now.isoformat()})
+        # Publish to the CALL_TOPIC
+        mqtt_client.publish(CALL_TOPIC, call_message)
+        print(f"Published 'call' to {CALL_TOPIC} at {now.isoformat()}")
 
-        # You can use a small delay to prevent overloading the CPU
-        time.sleep(25)
+        time.sleep(3)
 
 # Create MQTT client and set up callbacks
 mqtt_client = mqtt.Client()
