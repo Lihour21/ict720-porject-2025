@@ -3,21 +3,22 @@ import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContai
 import { motion } from 'framer-motion'
 
 const ChartData = [
-    { name: "station 1", value: 100},
+    { name: "station 1", value: 95},
     { name: "station 2", value: 80},
     { name: "station 3", value: 90},
-    { name: "station 4", value: 60}
+    { name: "station 4", value: 60},
+    { name: "station 5", value: 70}
 ]
 
-const StatChart = () => {
+const StatChart = ( {head} ) => {
   return (
     <motion.div
         className='bg-gray-800 bg-opacity-50 backdrop-blu-md overflow-hidden shadow-lg rounded-2xl p-6 border border-gray-700'
         initial={{opacity: 1, y: 20}}
         animate={{opacity: 1, y: 0}}
         transition={{delay: 0.2}}>
-            <h2 className='text-lg font-medium mb-4 text-gray-100'>
-                Statistic Chart
+            <h2 className='text-lg font-medium mb-4 text-gray-100 text-center'>
+                {head}
             </h2>
             
             <div className='h-80'>

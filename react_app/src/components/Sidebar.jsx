@@ -1,14 +1,14 @@
-import { BarChart2, DollarSign, Settings, Menu, ChartNoAxesCombined } from "lucide-react";
+import { BarChart2, DollarSign, Settings, Menu, ChartNoAxesCombined , Dice1, Dice2, Dice3, Dice4} from "lucide-react";
 import { useState } from 'react';
 import { AnimatePresence, motion } from "framer-motion";
 import { Link } from "react-router";
 
 const SIDEBAR_ITEMS = [
     {
-        name:"Overview", icon: BarChart2, color: "#6366f1", href: "/",
+        name:"Floor 1", icon: Dice1, color: "#6366f1", href: "/",
     },
     {
-        name:"Statistic", icon: ChartNoAxesCombined , color: "#8B5CF6", href: "/statistic"
+        name:"Floor 2", icon: Dice2 , color: "#8B5CF6", href: "/statistic"
     }
 ]
 const Sidebar = () => {
