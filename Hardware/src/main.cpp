@@ -16,6 +16,12 @@ const int mqtt_port = 1883; // MQTT port, typically 1883 for unencrypted connect
 const char* mqtt_user = ""; // MQTT username (if required)
 const char* mqtt_password = ""; // MQTT password (if required)
 const char* mqtt_topic = "m5stack/distance"; // Topic to send the distance
+
+// Distance
+uint16_t newReadings[3] = {0, 0, 0};  // Store the last 3 distance readings
+uint16_t readings[3] = {0, 0, 0};  // Store the current 3 readings
+uint16_t distance = 0;  // Current distance reading from the sensor
+uint16_t d_max = 30;  // Default d_max value
 // ~~~~~~~~~ VARIABLES END ~~~~~~~~~
 
 // ~~~~~~~~~ INIT BEGIN ~~~~~~~~~
@@ -26,6 +32,8 @@ PubSubClient client(espClient);
 
 // ~~~~~~~~~ FORWARD DECLARATION BEGIN ~~~~~~~~~
 void reconnectMQTT();
+void updateDMax();
+uint16_t calculateAverage(uint16_t readings[]);
 // ~~~~~~~~~ FORWARD DEECLARATION END ~~~~~~~~~
 
 void setup() {
@@ -79,11 +87,20 @@ void setup() {
 }
 
 void loop() {
+  // ~~~~~~~~~ CONNECT MQTT BEGIN ~~~~~~~~~
   // Ensure MQTT connection is active
   if (!client.connected()) {
     reconnectMQTT();
   }
   client.loop();
+  // ~~~~~~~~~ CONNECT MQTT END ~~~~~~~~~
+
+  // ~~~~~~~~~ RESET D_MAX BEGIN ~~~~~~~~~
+  // Check if the big button is pressed
+  if (M5.BtnB.isPressed()) {
+    updateDMax();  // Update the d_max value when button is pressed
+  }
+  // ~~~~~~~~~ RESET D_MAX END ~~~~~~~~~
 
   // Read distance from VL53L0X
   uint16_t distance = lox.readRange();
@@ -96,6 +113,7 @@ void loop() {
     DynamicJsonDocument doc(200);  // Allocate up to 200 bytes of memory dynamically
     doc["station"] = "device01";
     doc["distance"] = distance;
+    doc["d_max"] = d_max;
 
     // Serialize JSON to a string
     char jsonStr[200];
@@ -109,7 +127,16 @@ void loop() {
     Serial.println(jsonStr);
   }
 
-  delay(500); // Delay between readings
+  // ~~~~~~~~~ SLEEP BEGIN ~~~~~~~~~
+  // Put Wi-Fi in light sleep mode if no active task
+  if (!client.connected()) {
+    WiFi.setSleep(true);  // Put Wi-Fi into light sleep when not connected to MQTT
+  } else {
+    WiFi.setSleep(false);  // Keep Wi-Fi active while connected to MQTT
+  }
+  // ~~~~~~~~~ SLEEP END ~~~~~~~~~
+
+  delay(1000); // Delay between readings
 }
 
 void reconnectMQTT() {
@@ -125,4 +152,30 @@ void reconnectMQTT() {
       delay(5000);
     }
   }
+}
+
+void updateDMax() {
+  // Update the d_max value with the average of the next 3 distance readings
+  uint16_t newReadings[3];
+
+  for (int i = 0; i < 3; i++) {
+    newReadings[i] = lox.readRange();
+    delay(100);  // Short delay between readings
+  }
+
+  // Calculate the average of the 3 readings
+  d_max = calculateAverage(newReadings);
+
+  // Print the updated d_max value
+  Serial.print("New d_max: ");
+  Serial.println(d_max);
+}
+
+uint16_t calculateAverage(uint16_t readings[]) {
+  // Calculate the average of the given readings
+  uint16_t sum = 0.0;
+  for (int i = 0; i < 3; i++) {
+    sum += readings[i];
+  }
+  return sum / 3.0;
 }
