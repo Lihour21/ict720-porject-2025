@@ -41,6 +41,8 @@ void setup() {
   M5.begin();
   Serial.begin(115200);
   delay(1000);
+
+  pinMode(39, INPUT);
   // ~~~~~~~~~ VOID SETUP STUFF END ~~~~~~~~~
 
   // ~~~~~~~~~ SENSOR STUFF BEGIN ~~~~~~~~~
@@ -135,6 +137,10 @@ void loop() {
     WiFi.setSleep(false);  // Keep Wi-Fi active while connected to MQTT
   }
   // ~~~~~~~~~ SLEEP END ~~~~~~~~~
+
+  if (digitalRead(39) == LOW) { // Active LOW: 0 when pressed
+    Serial.println("Button Pressed!");
+  }
 
   delay(1000); // Delay between readings
 }
