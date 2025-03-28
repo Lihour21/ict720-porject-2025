@@ -3,14 +3,14 @@ import { RadialBarChart, RadialBar, Tooltip, ResponsiveContainer, PolarAngleAxis
 import { motion } from 'framer-motion'
 
 const ChartData = [
-    { name: "station 1", value: 95},
-    { name: "station 2", value: 80},
-    { name: "station 3", value: 90},
-    { name: "station 4", value: 60},
-    { name: "station 5", value: 70}
+    { name: "Room 1", value: 95},
+    { name: "Room 2", value: 80},
+    { name: "Room 3", value: 90},
+    { name: "Room 4", value: 60},
+    { name: "Room 5", value: 70}
 ]
 var a = 10;
-const PieChart = ({ station }) => {
+const RadialChart = ({ station }) => {
     const stationData = ChartData.find((item) => item.name === station);
 
         // Function to determine color based on value
@@ -55,4 +55,4 @@ const PieChart = ({ station }) => {
     )
 }
 
-export default PieChart
+export default RadialChart

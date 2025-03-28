@@ -1,12 +1,13 @@
 import Header from "../components/common/Header";
 import StatCard from "../components/common/StatCard";
-import StatChart from "../components/OverviewPage/StatChart";
-import PieChart from "../components/OverviewPage/PieChart";
+import StatChart from "../components/Charts/StatChart";
+import RadialChart from "../components/Charts/RadialChart";
+import TotalChart from "../components/Charts/TotalChart";
 
 import { motion } from "framer-motion";
 import { Cpu, Smile, Annoyed, TriangleAlert  } from "lucide-react";
 
-const OverviewPage = () => {
+const FloorOnePage = () => {
     return (
             <div className='flex-1 overflow-auto relative z-10'>
             <Header title="Floor 1" />
@@ -27,11 +28,11 @@ const OverviewPage = () => {
                 </h2>
                 {/* Gauge */}
                 <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 lg:grid-flow-row gap-3 mb-5'>
-                    <PieChart station = "station 1"/>
-                    <PieChart station = "station 2"/>
-                    <PieChart station = "station 3"/>
-                    <PieChart station = "station 4"/>
-                    <PieChart station = "station 5"/>
+                    <RadialChart station = "Room 1"/>
+                    <RadialChart station = "Room 2"/>
+                    <RadialChart station = "Room 3"/>
+                    <RadialChart station = "Room 4"/>
+                    <RadialChart station = "Room 5"/>
                 </div>
                 <h2 className='text-lg font-medium mb-4 text-gray-100'>
                     Statistic
@@ -39,13 +40,10 @@ const OverviewPage = () => {
                 {/* Charts */}
                 <div className='grid grid-cols-1 lg:grid-cols-2 lg:grid-flow-row gap-8'>
                     <StatChart head="Monthly"/>
-                    <StatChart head="Daily"/>
+                    <TotalChart head="Paper used by Room"/>
                 </div>
-
-                
-            
             </main>
     </div>
     )
 };
-export default OverviewPage;
+export default FloorOnePage;
