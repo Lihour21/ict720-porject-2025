@@ -1,30 +1,32 @@
 import React from 'react'
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, BarChart, Bar  } from 'recharts'
 import { motion } from 'framer-motion'
+import FetchRawData from '../../utils/RestFetch'
 
-const pieChartData = [
-    { name: "Room 1", value: 95},
-    { name: "Room 1", value: 95},
-    { name: "Room 1", value: 95},
-    { name: "Room 1", value: 95},
-    { name: "Room 2", value: 80},
-    { name: "Room 2", value: 80},
-    { name: "Room 2", value: 80},
-    { name: "Room 2", value: 80},
-    { name: "Room 3", value: 90},
-    { name: "Room 3", value: 90},
-    { name: "Room 3", value: 90},
-    { name: "Room 3", value: 90},
-    { name: "Room 3", value: 90},
-    { name: "Room 3", value: 90},
-    { name: "Room 4", value: 60},
-    { name: "Room 4", value: 60},
-    { name: "Room 5", value: 70},
-    { name: "Room 5", value: 70},
-    { name: "Room 5", value: 70}
-]
+const MyChart = ({ station, url }) => {
 
-const MyChart = ({ station }) => {
+    const fetchData = <FetchRawData url={url}/>
+    const pieChartData = [
+        { name: "Room 1", value: 95},
+        { name: "Room 1", value: 95},
+        { name: "Room 1", value: 95},
+        { name: "Room 1", value: 95},
+        { name: "Room 2", value: 80},
+        { name: "Room 2", value: 80},
+        { name: "Room 2", value: 80},
+        { name: "Room 2", value: 80},
+        { name: "Room 3", value: 90},
+        { name: "Room 3", value: 90},
+        { name: "Room 3", value: 90},
+        { name: "Room 3", value: 90},
+        { name: "Room 3", value: 90},
+        { name: "Room 3", value: 90},
+        { name: "Room 4", value: 60},
+        { name: "Room 4", value: 60},
+        { name: "Room 5", value: 70},
+        { name: "Room 5", value: 70},
+        { name: "Room 5", value: 70}
+    ]
     const stationData = ChartData.find((item) => item.name === station);
 
         // Function to determine color based on value
@@ -70,60 +72,3 @@ const MyChart = ({ station }) => {
 }
 
 export default MyChart
-
-
-// const pieChart = ( {head} ) => {
-
-    const countOne = pieChartData.filter(item => item.name === "Room 1").length;
-    const countTwo = pieChartData.filter(item => item.name === "Room 2").length;
-    const countThree = pieChartData.filter(item => item.name === "Room 3").length;
-    const countFour = pieChartData.filter(item => item.name === "Room 4").length;
-    const countFive = pieChartData.filter(item => item.name === "Room 5").length;
-
-    const countedData =[
-        { name: "Room 1", value: countOne},
-        { name: "Room 2", value: countTwo},
-        { name: "Room 3", value: countThree},
-        { name: "Room 4", value: countFour},
-        { name: "Room 5", value: countFive}
-    ]
-
-//     return (
-//         <motion.div
-//             className='bg-gray-800 bg-opacity-50 backdrop-blu-md overflow-hidden shadow-lg rounded-2xl p-6 border border-gray-700'
-//             initial={{opacity: 1, y: 20}}
-//             animate={{opacity: 1, y: 0}}
-//             transition={{delay: 0.2}}>
-//                 <h2 className='text-lg font-medium mb-4 text-gray-100 text-center'>
-//                     {head}
-//                 </h2>
-                
-                <div className='h-80'>
-                    <ResponsiveContainer width={"100%"} hight={"100%"}>
-                        <BarChart
-                            width={500}
-                            height={300}
-                            data={ChartData}
-                            margin={{
-                                top: 5,
-                                right: 30,
-                                left: 20,
-                                bottom: 5
-                            }}
-                            barSize={20}
-                            >
-                            <CartesianGrid strokeDasharray='3 3' stoke='#4b5563'/>                
-                            <XAxis dataKey={"name"} stroke='#4b5563'/>
-                            <YAxis stroke='#9ca3af'/>
-                            <Tooltip/>
-
-                            <Bar dataKey="value"  fill="#8884d8" background={{ fill: "#eee", opacity: 0 }} />
-                        </BarChart>
-                    </ResponsiveContainer>
-                </div>
-//         </motion.div>
-//     )
-// }
-
-// export default myPieChart
-

@@ -1,30 +1,34 @@
-import React from 'react'
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import { Cell, Tooltip, ResponsiveContainer, PieChart, Pie} from 'recharts'
 import { motion } from 'framer-motion'
 
-const pieChartData = [
-    { name: "Room 1", value: 95},
-    { name: "Room 1", value: 95},
-    { name: "Room 1", value: 95},
-    { name: "Room 1", value: 95},
-    { name: "Room 2", value: 80},
-    { name: "Room 2", value: 80},
-    { name: "Room 2", value: 80},
-    { name: "Room 2", value: 80},
-    { name: "Room 3", value: 90},
-    { name: "Room 3", value: 90},
-    { name: "Room 3", value: 90},
-    { name: "Room 3", value: 90},
-    { name: "Room 3", value: 90},
-    { name: "Room 3", value: 90},
-    { name: "Room 4", value: 60},
-    { name: "Room 4", value: 60},
-    { name: "Room 5", value: 70},
-    { name: "Room 5", value: 70},
-    { name: "Room 5", value: 70}
-]
+const TotalChart = ( {head, rest_link} ) => {
 
-const TotalChart = ( {head} ) => {
+
+
+    const pieChartData = [
+        { name: "Room 1", value: 95},
+        { name: "Room 1", value: 95},
+        { name: "Room 1", value: 95},
+        { name: "Room 1", value: 95},
+        { name: "Room 2", value: 80},
+        { name: "Room 2", value: 80},
+        { name: "Room 2", value: 80},
+        { name: "Room 2", value: 80},
+        { name: "Room 3", value: 90},
+        { name: "Room 3", value: 90},
+        { name: "Room 3", value: 90},
+        { name: "Room 3", value: 90},
+        { name: "Room 3", value: 90},
+        { name: "Room 3", value: 90},
+        { name: "Room 4", value: 60},
+        { name: "Room 4", value: 60},
+        { name: "Room 5", value: 70},
+        { name: "Room 5", value: 70},
+        { name: "Room 5", value: 70}
+    ]
+    
     const countOne = pieChartData.filter(item => item.name === "Room 1").length;
     const countTwo = pieChartData.filter(item => item.name === "Room 2").length;
     const countThree = pieChartData.filter(item => item.name === "Room 3").length;
