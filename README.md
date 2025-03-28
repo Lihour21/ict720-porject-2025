@@ -54,6 +54,23 @@ The system automatically detects a refill and updates the status.
 *  **acceptance criteria #3**
 I receive a confirmation message when the refill is detected.
 
+
+5. **US5**: Staff Notification for Refill
+
+As a staff member responsible for maintenance, I want to receive a notification when the toilet paper is low, so that I know when to refill it.
+
+*  **acceptance criteria #1**
+The system sends a notification to designated staff when the toilet paper level is below a set threshold.
+
+*  **acceptance criteria #2**
+Staff can receive alerts via a mobile app, email, or other designated communication method.
+
+*  **acceptance criteria #3**
+The notification includes information about which dispenser needs refilling.
+
+*  **acceptance criteria #4**
+Staff can acknowledge or mark the notification as completed after refilling.
+
 ## Project Diagram
 <p align="center">
     <img src="https://github.com/user-attachments/assets/a1c14748-8bd7-4168-9f74-5edce146eb19">
