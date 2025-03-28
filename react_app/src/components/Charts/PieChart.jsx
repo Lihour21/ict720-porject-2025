@@ -3,7 +3,7 @@ import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContai
 import { motion } from 'framer-motion'
 import FetchRawData from '../../utils/RestFetch'
 
-const MyChart = ({ station, url }) => {
+const MyChart = ({ station, url, fetchedData }) => {
 
     const fetchData = <FetchRawData url={url}/>
     const pieChartData = [

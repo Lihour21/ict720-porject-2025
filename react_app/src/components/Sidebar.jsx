@@ -5,19 +5,19 @@ import { Link } from "react-router";
 
 const SIDEBAR_ITEMS = [
     {
-        name:"Floor 1", icon: Dice1, color: "#6366f1", href: "/",
+        name:"Floor 1", icon: Dice1, color: "#0088FE", href: "/",
     },
     {
-        name:"Floor 2", icon: Dice2 , color: "#8B5CF6", href: "/two"
+        name:"Floor 2", icon: Dice2 , color: "#00C49F", href: "/two"
     },
     {
-        name:"Floor 3", icon: Dice3 , color: "#8B5CF6", href: "/three"
+        name:"Floor 3", icon: Dice3 , color: "#FFBB28", href: "/three"
     },
     {
-        name:"Floor 4", icon: Dice4 , color: "#8B5CF6", href: "/four"
+        name:"Floor 4", icon: Dice4 , color: "#FF8042", href: "/four"
     },
     {
-        name:"Floor 5", icon: Dice5 , color: "#8B5CF6", href: "/five"
+        name:"Floor 5", icon: Dice5 , color: "#900C3F", href: "/five"
     }
     ]
 const Sidebar = () => {
