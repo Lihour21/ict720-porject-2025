@@ -71,6 +71,9 @@ The notification includes information about which dispenser needs refilling.
 *  **acceptance criteria #4**
 Staff can acknowledge or mark the notification as completed after refilling.
 
+## Our UI protoype
+
+
 ## Project Diagram
 <p align="center">
     <img src="https://github.com/user-attachments/assets/a1c14748-8bd7-4168-9f74-5edce146eb19">
