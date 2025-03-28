@@ -1,4 +1,4 @@
-import { BarChart2, DollarSign, Settings, Menu, ChartNoAxesCombined , Dice1, Dice2, Dice3, Dice4} from "lucide-react";
+import { BarChart2, DollarSign, Settings, Menu, ChartNoAxesCombined , Dice1, Dice2, Dice3, Dice4, Dice5} from "lucide-react";
 import { useState } from 'react';
 import { AnimatePresence, motion } from "framer-motion";
 import { Link } from "react-router";
@@ -8,9 +8,18 @@ const SIDEBAR_ITEMS = [
         name:"Floor 1", icon: Dice1, color: "#6366f1", href: "/",
     },
     {
-        name:"Floor 2", icon: Dice2 , color: "#8B5CF6", href: "/statistic"
+        name:"Floor 2", icon: Dice2 , color: "#8B5CF6", href: "/two"
+    },
+    {
+        name:"Floor 3", icon: Dice3 , color: "#8B5CF6", href: "/three"
+    },
+    {
+        name:"Floor 4", icon: Dice4 , color: "#8B5CF6", href: "/four"
+    },
+    {
+        name:"Floor 5", icon: Dice5 , color: "#8B5CF6", href: "/five"
     }
-]
+    ]
 const Sidebar = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
   return (

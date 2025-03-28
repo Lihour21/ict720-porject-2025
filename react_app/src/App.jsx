@@ -1,6 +1,9 @@
 import { Route, Routes } from "react-router-dom";
-import OverviewPage from "./pages/OverviewPage";
-import StatisticPage from "./pages/StatisticPage";
+import FloorOnePage from "./pages/FloorOne";
+import FloorTwoPage from "./pages/FloorTwo";
+import FloorThreePage from "./pages/FloorThree";
+import FloorFourPage from "./pages/FloorFour";
+import FloorFivePage from "./pages/FloorFive";
 import Sidebar from "./components/Sidebar";
 
 
@@ -14,8 +17,11 @@ function App() {
     </div>
     <Sidebar />
     <Routes>
-      <Route path='/' element={<OverviewPage />} />
-      <Route path='/statistic' element={<StatisticPage />} />
+      <Route path='/' element={<FloorOnePage />} />
+      <Route path='/two' element={<FloorTwoPage />} />
+      <Route path='/three' element={<FloorThreePage />} />
+      <Route path='/four' element={<FloorFourPage />} />
+      <Route path='/five' element={<FloorFivePage />} />
     </Routes>
   </div>;
 }
