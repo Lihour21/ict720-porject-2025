@@ -73,7 +73,7 @@ Staff can acknowledge or mark the notification as completed after refilling.
 
 ## Our UI protoype
 <p align="center">
-    <img src="[https://https://github.com/Lihour21/toilet-paper-porject-2025/blob/main/images/image-2.png">
+    <img src="https://github.com/Lihour21/toilet-paper-porject-2025/blob/f4a72ec34ff5a3f937a8a101e0013c7406ba7ddc/images/image-2.png">
 </p>
 
 
