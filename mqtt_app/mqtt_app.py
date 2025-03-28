@@ -15,7 +15,34 @@ D = 200
 # Define the dictionary for floor and room mapping
 floor_room_dict = {
     'device01': {'floor': 'floor1', 'room': 'room1'},
-    'device02': {'floor': 'floor2', 'room': 'room2'},
+    'device02': {'floor': 'floor1', 'room': 'room2'},
+    'device03': {'floor': 'floor1', 'room': 'room3'},
+    'device04': {'floor': 'floor1', 'room': 'room4'},
+    'device05': {'floor': 'floor1', 'room': 'room5'},
+    
+    'device06': {'floor': 'floor2', 'room': 'room1'},
+    'device07': {'floor': 'floor2', 'room': 'room2'},
+    'device08': {'floor': 'floor2', 'room': 'room3'},
+    'device09': {'floor': 'floor2', 'room': 'room4'},
+    'device10': {'floor': 'floor2', 'room': 'room5'},
+    
+    'device11': {'floor': 'floor3', 'room': 'room1'},
+    'device12': {'floor': 'floor3', 'room': 'room2'},
+    'device13': {'floor': 'floor3', 'room': 'room3'},
+    'device14': {'floor': 'floor3', 'room': 'room4'},
+    'device15': {'floor': 'floor3', 'room': 'room5'},
+    
+    'device16': {'floor': 'floor4', 'room': 'room1'},
+    'device17': {'floor': 'floor4', 'room': 'room2'},
+    'device18': {'floor': 'floor4', 'room': 'room3'},
+    'device19': {'floor': 'floor4', 'room': 'room4'},
+    'device20': {'floor': 'floor4', 'room': 'room5'},
+    
+    'device21': {'floor': 'floor5', 'room': 'room1'},
+    'device22': {'floor': 'floor5', 'room': 'room2'},
+    'device23': {'floor': 'floor5', 'room': 'room3'},
+    'device24': {'floor': 'floor5', 'room': 'room4'},
+    'device25': {'floor': 'floor5', 'room': 'room5'}
 }
 
 # Load environment variables from .env file
