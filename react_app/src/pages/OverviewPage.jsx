@@ -1,6 +1,7 @@
 import Header from "../components/common/Header";
 import StatCard from "../components/common/StatCard";
-import StatChart from "../components/StatChart";
+import StatChart from "../components/OverviewPage/StatChart";
+import PieChart from "../components/OverviewPage/PieChart";
 
 import { motion } from "framer-motion";
 import { Cpu, Smile, Annoyed, TriangleAlert  } from "lucide-react";
@@ -10,7 +11,7 @@ const OverviewPage = () => {
             <Header title="Overview" />
             <main className='max-w-7x1 mx-auto py-6 px-4 lg:px-8'>
                 {/* StatCard */}
-                <motion.div className='grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4 mb-8'
+                <motion.div className='grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4 mb-5'
                 initial={{ opacity: 0, y: 20}}
                 animate={{ opacity: 1, y:0}}
                 transition={{ duration: 1}}
@@ -21,8 +22,16 @@ const OverviewPage = () => {
                     <StatCard name="Very Low" icon={TriangleAlert} value='10' color='#e74c3c' />
                 </motion.div>
                 
+                {/* Gauge */}
+                <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 lg:grid-flow-row gap-3 mb-5'>
+                    <PieChart station = "station 1"/>
+                    <PieChart station = "station 2"/>
+                    <PieChart station = "station 3"/>
+                    <PieChart station = "station 4"/>
+                    <PieChart station = "station 5"/>
+                </div>
+            
                 {/* Charts */}
-
                 <div className='grid grid-cols-1 lg:grid-cols-2 lg:grid-flow-row gap-8'>
                     <StatChart/>
                 </div>

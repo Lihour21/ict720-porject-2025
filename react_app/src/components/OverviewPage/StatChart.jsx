@@ -12,7 +12,7 @@ const ChartData = [
 const StatChart = () => {
   return (
     <motion.div
-        ckkassName='bg-gray-800 bg-opacity-50 backdrop-blu-md overflow-hidden shadow-lg rounded-2xl p-6 border border-gray-700'
+        className='bg-gray-800 bg-opacity-50 backdrop-blu-md overflow-hidden shadow-lg rounded-2xl p-6 border border-gray-700'
         initial={{opacity: 1, y: 20}}
         animate={{opacity: 1, y: 0}}
         transition={{delay: 0.2}}>
