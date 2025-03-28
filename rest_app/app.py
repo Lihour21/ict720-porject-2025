@@ -36,24 +36,22 @@ sample_document = device_collection.find_one()
 if sample_document:
     print(f"Sample document: {sample_document}")
 
-@app.route('/toiletpaper/<floor>/<room>', methods=['GET'])
-def query_toiletpaper(floor, room):
-    """Query data for a specific floor and room."""
+@app.route('/toiletpaper/<floor>', methods=['GET'])
+def query_toiletpaper(floor):
+    """Query data for a specific floor."""
     response = {}
 
     # Database query
     query = {
-        "floor": floor,
-        "room": room
+        "floor": floor
     }
 
     # Fetch and sort documents
     documents = device_collection.find(query).sort("timestamp", -1)
 
     response.update({
-        'status': 'ok',
+        'status': 'site ok, but navik is not',
         'floor': floor,
-        'room': room,
         'data': []
     })
 
@@ -68,6 +66,8 @@ def query_toiletpaper(floor, room):
         # Add data to response
         record_data = {
             'timestamp': timestamp.isoformat(),
+            'floor': record.get('floor'),
+            'room': record.get('room'),
             'tsi': record.get('tsi'),
             'rst': record.get('rst')
         }
@@ -77,7 +77,7 @@ def query_toiletpaper(floor, room):
     if not response['data']:
         return jsonify({
             'status': 'error',
-            'text': 'no data for this floor/room'
+            'text': 'no data for this floor'
         })
 
     return jsonify(response)
