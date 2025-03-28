@@ -4,6 +4,7 @@ This project aims to develop an Internet of Things system designed to monitor th
 
 ## User stories 
 1. **US1**: Device Setup & Connectivity
+
 As an owner, I want to register my toilet paper monitoring device with my home/business WiFi, so that I can receive data remotely.
 
 *   **acceptance criteria #1**
