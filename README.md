@@ -164,13 +164,12 @@ The function of the rest_app is to get the data from MongoDB and put it into res
     <img src="https://github.com/user-attachments/assets/cf9468ec-fe0b-48dc-8958-61581c2534c8">
 </p>
 
-<p align="center">
-    <img src="https://github.com/user-attachments/assets/906e9a76-cd88-4cee-aab4-1bf0ec512356">
-</p>
-
 ## Sidebar Navigation
 <p align="center">
     <img src="https://github.com/user-attachments/assets/c15ce84d-1eb2-4647-991c-abdc5bc8dbb9">
+</p>
+<p align="center">
+    <img src="https://github.com/user-attachments/assets/906e9a76-cd88-4cee-aab4-1bf0ec512356">
 </p>
 
 ## Our Members
