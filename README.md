@@ -146,21 +146,20 @@ The function of the rest_app is to get the data from MongoDB and put it into res
 
 ### React_app
 <p align="center">
-    <img src="https://github.com/user-attachments/assets/c15ce84d-1eb2-4647-991c-abdc5bc8dbb9">
-</p>
-
-<p align="center">
     <img src="https://github.com/user-attachments/assets/748a338e-3c7a-48ad-b061-c115500c3c6e">
 </p>
 
+## Status Card
 <p align="center">
     <img src="https://github.com/user-attachments/assets/90ca65c9-4a4b-404f-afa7-1e3b1f5337a1">
 </p>
 
+## Gauges
 <p align="center">
     <img src="https://github.com/user-attachments/assets/a9be5cb0-f869-49bd-bdbc-bc1d25b91809">
 </p>
 
+## Monthly Statistic
 <p align="center">
     <img src="https://github.com/user-attachments/assets/cf9468ec-fe0b-48dc-8958-61581c2534c8">
 </p>
@@ -169,11 +168,10 @@ The function of the rest_app is to get the data from MongoDB and put it into res
     <img src="https://github.com/user-attachments/assets/906e9a76-cd88-4cee-aab4-1bf0ec512356">
 </p>
 
-## Status Card
-hkjhjkhjkhjkhj
-## Gauges
-## Monthly Statistic
-## Room Used Persentage
+## Sidebar Navigation
+<p align="center">
+    <img src="https://github.com/user-attachments/assets/c15ce84d-1eb2-4647-991c-abdc5bc8dbb9">
+</p>
 
 ## Our Members
 Mr. Chananyu Kamolsuntron 
