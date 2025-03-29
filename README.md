@@ -118,7 +118,7 @@ Image of the dictionary
 
 Note that for the TSI calculation, it needs an input of D which is the distance from the top of the tissue box to the empty toilet paper roll. Additionally, due to potential inaacuracies, If the results from TSI calculation is more than 100 or less than 0, it will be changed to 100 and 0 respectively to avoid breaking the website later on.
 
-<p align="center>
+<p align="center">
     <img src="https://github.com/user-attachments/assets/eec7ac99-34d3-4518-9777-c1d528706cfb">
 </p>
 <p align="center">
@@ -130,8 +130,9 @@ Lastly, mqtt_app also sends a call to the mosquitto every 20 minutes from 6 am t
 ### Rest_app
 The function of the rest_app is to get the data from MongoDB and put it into rest api. It will query the database name and find the collection, then put it into the rest url path. In this case it is /toiletpaper/<floor> in the format as seen in the image below.
 
-<p align="center>
-    <img src="https://github.com/user-attachments/assets/b886d6ea-1218-496c-be44-272ff4cb139c">
+
+<p align="center">
+    <img src="https://github.com/user-attachments/assets/6ac69665-6b7f-4d78-80f2-b8e1cb37989f">
 </p>
 
 ## Our Members
