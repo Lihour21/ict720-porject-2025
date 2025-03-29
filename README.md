@@ -98,6 +98,42 @@ Let $D$ be the total distance, $x_{max}$ be the maximum height of the toilet pap
 
 $$\text{Percentage Remaining} = 100 - \left[\frac{x - x_{max}}{D - x_{max}}\times100\right]$$
 
+# Implementation
+
+### Hardware
+The hardware consists of two components m5Stack Atom Matrix as the main board and the Time of Flight VL53L0X as the distance sensor. The hardware main function is to measure the raw distance from the top of the tissue box to the top of the toilet paper, then send that data, via mosquitto, to the mqtt_app. There are two conditions for the hardware to collect the data: First is that it receive the call from mqtt, and the second is when the button on m5Stack is pressed. When the button it pressed, the sensor will quickly (every 0.1 second) sample the distance, then average it. This is used to "reset" the system and get the distance of when the tissue is at 100%.
+
+<p align="center">
+    <img src="https://github.com/user-attachments/assets/9d588b4d-5946-4cd6-bf20-ec48d07e6a97">
+</p>
+
+### MQTT_App
+The main function of the MQTT_App is to receive data from the hardware, process it, and then store it into the database. The database used is the MongoDB Atlas, which is an online database hosted by MongoDB. Mqtt_app process the data in two ways. First, it changes from the raw distance collected into the tissue strength index (TSI), or the precentage of the toilet paper remaining. Second, it changes the collected station name, such as device01 and device02, into floor number and room number via dictionary.
+<p align="center">
+    <img src="https://github.com/user-attachments/assets/ed2ed6b4-5f44-4680-963f-af99c7e6aa4e">
+</p>
+<p align="center">
+Image of the dictionary
+</p>
+
+Note that for the TSI calculation, it needs an input of D which is the distance from the top of the tissue box to the empty toilet paper roll. Additionally, due to potential inaacuracies, If the results from TSI calculation is more than 100 or less than 0, it will be changed to 100 and 0 respectively to avoid breaking the website later on.
+
+<p align="center>
+    <img src="https://github.com/user-attachments/assets/eec7ac99-34d3-4518-9777-c1d528706cfb">
+</p>
+<p align="center">
+Image of data to be inserted to the database
+</p>
+
+Lastly, mqtt_app also sends a call to the mosquitto every 20 minutes from 6 am to 6 pm, so that the hardware only collect data in relavent period of time, as this project is planned to be implemented in office space such as our study building.
+
+### Rest_app
+The function of the rest_app is to get the data from MongoDB and put it into rest api. It will query the database name and find the collection, then put it into the rest url path. In this case it is /toiletpaper/<floor> in the format as seen in the image below.
+
+<p align="center>
+    <img src="https://github.com/user-attachments/assets/b886d6ea-1218-496c-be44-272ff4cb139c">
+</p>
+
 ## Our Members
 Mr. Chananyu Kamolsuntron 
 
