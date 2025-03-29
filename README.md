@@ -99,6 +99,12 @@ Let $D$ be the total distance, $x_{max}$ be the maximum height of the toilet pap
 $$\text{Percentage Remaining} = 100 - \left[\frac{x - x_{max}}{D - x_{max}}\times100\right]$$
 
 # Implementation
+<p align="center">
+    <img src="https://github.com/user-attachments/assets/2fe2e89e-8588-41a7-b678-dfa7203e8ee6">
+</p>
+<p align="center">
+Flow of the entire project
+</p>
 
 ### Hardware
 The hardware consists of two components m5Stack Atom Matrix as the main board and the Time of Flight VL53L0X as the distance sensor. The hardware main function is to measure the raw distance from the top of the tissue box to the top of the toilet paper, then send that data, via mosquitto, to the mqtt_app. There are two conditions for the hardware to collect the data: First is that it receive the call from mqtt, and the second is when the button on m5Stack is pressed. When the button it pressed, the sensor will quickly (every 0.1 second) sample the distance, then average it. This is used to "reset" the system and get the distance of when the tissue is at 100%.
